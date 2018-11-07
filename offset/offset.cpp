@@ -46,28 +46,28 @@ int main()
                       cout << "*";
                   }
              }
-             else if ((i=0) and (j<4) and (j>0))
+             else if ((i==0) and (j<4) and (j>0))
              {
                  if ((s[i][j] < s[i][j-1]) and (s[i][j] < s[i][j+1]) and (s[i][j]<s[i][j+1]) )
                  {
                       cout << "*";
                  }
              }
-             else if ((j=0) and (i<4) and (i>0))
+             else if ((j==0) and (i<4) and (i>0))
              {
                  if ((s[i][j] < s[i-1][j]) and (s[i][j] < s[i+1][j]) and (s[i][j]<s[i+1][j]) )
                  {
                       cout << "*";
                  }
              }
-             else if ((i=4) and (j<4) and (j>0))
+             else if ((i==4) and (j<4) and (j>0))
              {
                  if ((s[i][j] < s[i][j-1]) and (s[i][j] < s[i][j+1]) and (s[i][j]<s[i][j+1]) )
                  {
                      cout << "*";
                  }
              }
-             else if ((j=4) and (i<4) and (i>0))
+             else if ((j==4) and (i<4) and (i>0))
              {
                  if ((s[i][j] < s[i-1][j]) and (s[i][j] < s[i+1][j]) and (s[i][j]<s[i+1][j]) )
                  {
@@ -85,7 +85,6 @@ int main()
              {
                  cout << s[i][j];
              }
-         cout << "\n";
          }
 
     }
