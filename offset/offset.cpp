@@ -9,8 +9,12 @@ int main()
     for (int a=0; a<5; a++)
     {
          for (int b=0; b<5; b++)
-         {
-             cin >> s[a][b];
+         {   
+              cin >> s[a][b];
+              if (s[a][b]<0 and s[a][b]>9)
+              {
+                   b=b-1; 
+              }
          }
     }
     
@@ -18,75 +22,120 @@ int main()
     {
          for (int j=0; j<5; j++)
          {
-             if (i==0 and j==0)
+             if (i==0 )
              {
-                  if (s[0][0]<s[0][1] and s[0][0]<s[1][0])
+                  if (j==0)
                   {
-                      cout <<"*";
-                  } 
-             }
-             else if (i==0 and j==4)
-             {
-                  if (s[0][4]<s[0][3] and s[0][4] <s[1][4])
-                  {
-                      cout << "*";
-                  }       
-             }
-             else if (i==4 and j==0)
-             {
-                  if (s[4][0]<s[3][0]and s[4][0]<s[4][1])
-                  {
-                      cout << "*";
-                  }           
-             }
-             else if (i==4 and j==4)
-             {
-                  if (s[4][4]<s[4][3]and s[4][4]<s[3][4])
-                  {
-                      cout << "*";
+                      if (s[i][j]<s[i][j+1] and s[i][j]<s[i+1][j])
+                      {
+                          cout <<"*"<<" ";
+                      }
+                      else
+                      {
+                          cout << s[i][j]<<" ";
+                      } 
                   }
+                  else if (j==4)
+                  {
+                      if (s[i][j]<s[i][j-1] and s[i][j] <s[i-1][j])
+                      {
+                          cout << "*"<<" ";
+                      }
+                      else
+                      {
+                          cout << s[i][j]<<" ";
+                      }       
+                  }
+                  else
+                  {
+                      if ((s[i][j] < s[i][j-1]) and (s[i][j] < s[i][j+1]) and (s[i][j]<s[i+1][j]) )
+                      {
+                          cout << "*"<<" ";
+                      }
+                      else
+                      {
+                          cout << s[i][j]<<" ";
+                      }
+                  }
+
              }
-             else if ((i==0) and (j<4) and (j>0))
+             else if (i==4)
              {
-                 if ((s[i][j] < s[i][j-1]) and (s[i][j] < s[i][j+1]) and (s[i][j]<s[i][j+1]) )
+                  if (j==0)
+                  {
+                      if (s[i][j]<s[i-1][j]and s[i][j]<s[i][j+1])
+                      {
+                          cout << "*"<<" ";
+                      }
+                      else
+                      {
+                          cout << s[i][j]<<" ";
+                      }           
+                  }
+                  else if (j==4)
+                  {
+                      if (s[i][j]<s[i][j-1]and s[i][j]<s[i-1][j])
+                      {
+                          cout << "*"<<" ";
+                      }
+                      else
+                      {
+                          cout << s[i][j]<<" ";
+                      }
+                  }
+                 else
                  {
-                      cout << "*";
+                      if ((s[i][j] < s[i-1][j]) and (s[i][j] < s[i][j-1]) and (s[i][j]<s[i][j+1]) )
+                      {
+                          cout << "*"<<" ";
+                      }
+                      else
+                      {
+                          cout << s[i][j]<<" ";
+                      }
                  }
              }
-             else if ((j==0) and (i<4) and (i>0))
-             {
-                 if ((s[i][j] < s[i-1][j]) and (s[i][j] < s[i+1][j]) and (s[i][j]<s[i+1][j]) )
-                 {
-                      cout << "*";
-                 }
-             }
-             else if ((i==4) and (j<4) and (j>0))
-             {
-                 if ((s[i][j] < s[i][j-1]) and (s[i][j] < s[i][j+1]) and (s[i][j]<s[i][j+1]) )
-                 {
-                     cout << "*";
-                 }
-             }
-             else if ((j==4) and (i<4) and (i>0))
-             {
-                 if ((s[i][j] < s[i-1][j]) and (s[i][j] < s[i+1][j]) and (s[i][j]<s[i+1][j]) )
-                 {
-                     cout << "*";
-                 }
-             }
-             else if ((i<4) and (i>0) and (j<4) and (j>0))
-             {
-                 if ((s[i][j]<s[i][j-1] and (s[i][j]<s[i][j+1]) and (s[i][j]<s[i+1][j]) and (s[i][j]<s[i-1][j])))
-                 {
-                     cout << "*";
-                 }
-             }
+
+
              else
              {
-                 cout << s[i][j];
+                 if (j==0)
+                 {
+                     if ((s[i][j]<s[i-1][j]) and(s[i][j]<s[i+1][j]) and(s[i][j]<s[i][j+1]))
+                     {
+                          cout << "*"<<" ";
+                     }
+                     else
+                     {
+                          cout << s[i][j]<<" ";
+                     }
+                 }
+                 else if (j==4)
+                 {
+                     if ((s[i][j]<s[i][j-1])and(s[i][j]<s[i-1][j])and(s[i][j]<s[i+1][j]))
+                     {
+                          cout << "*"<<" ";
+                     }
+                     else
+                     {
+                          cout << s[i][j]<<" ";
+                     }
+                 }
+                 else
+                 {
+                     if ((s[i][j]<s[i-1][j])and(s[i][j]<s[i+1][j])and(s[i][j]<s[i][j-1])and(s[i][j]<s[i][j+1]))
+                     {
+                          cout << "*"<<" ";
+                     }
+                     else
+                     {
+                          cout << s[i][j]<<" ";
+                     }
+                 }
              }
-         }
 
+         }
+         cout << "\n";
     }
 
 
