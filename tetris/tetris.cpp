@@ -26,7 +26,7 @@ int p_col (int max_x, int max_y)
             for (int j=0; j<r; j++)
             {
                 // 1일때 지정된 곳이 0인경우
-                if (arr[i][j]==1 and arr[max_x][max_y]==0)
+                if (arr[i][j]==1)
                 {
                     num++;
                 }
@@ -46,7 +46,7 @@ int p_row (int x)
 {
     for (int q=0; q<c; q++)
     {
-        if (arr[q][x] ==1 and q>3)
+        if (arr[q][x] ==1 and q>1)
         {
             axy[axy_num].ax=q;
             axy[axy_num].ay=x;
@@ -70,19 +70,6 @@ int main ()
 {
     cin >> c >>r;
  
-    if (c<5)
-    {
-        cout << "retry C :";
-        cin >> c;
-    }
- 
-    if (r>20)
-    {
-        cout << "retry R :";
-        cin >>r;
-    }
-    
- 
     for (int i=0; i<c; i++)
     {
         for (int j=0; j<r; j++)
@@ -99,7 +86,7 @@ int main ()
 
 
     int axy_max=axy[0].ax;
-    int axy_max_y = 0;
+    int axy_max_y = axy[0].ay;
 
     for (int m=0; m<20; m++)
     {
